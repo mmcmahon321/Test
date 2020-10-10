@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "TitanComputerParts/templates/static",
+    'TitanComputerParts/templates/static',
     '/var/www/static/',
 ]
 
@@ -65,7 +65,7 @@ ROOT_URLCONF = 'GroupProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'TitanComputerParts/templates']
+        'DIRS': [os.path.join(BASE_DIR, 'TitanComputerParts/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'GroupProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
