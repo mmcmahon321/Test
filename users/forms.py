@@ -4,10 +4,11 @@ from django.contrib.auth.models import User
 
 
 class RegisterForm(UserCreationForm):
-    first_name = forms.CharField(max_length=50, required=True, help_text='Required')
-    last_name = forms.CharField(max_length=50, required=True, help_text='Required')
-    username = forms.CharField(max_length=50, required=True, help_text='Required')
-    email = forms.EmailField(max_length=100, required=True, help_text='Required')
+    first_name = forms.CharField(max_length=50, required=True)
+    last_name = forms.CharField(max_length=50, required=True)
+    username = forms.CharField(max_length=50, required=True)
+    email = forms.EmailField(max_length=100, required=True)
+    password2 = forms.CharField(label="Password confirmation", help_text="")
 
     class Meta:
         model = User
