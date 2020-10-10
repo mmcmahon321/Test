@@ -6,7 +6,7 @@ header {
 	color: black;
 	text-align: center;
 	background-color: #3D9BE9;
-	padding-top: 20px;
+	padding-top: 10px;
 	margin: 0px;
 }
 
@@ -89,4 +89,45 @@ nav li a:hover {
 body {
 	margin: 0px;
 	background: #f2f2f2;
+}
+
+/***** ABOUT US *****/
+.aboutus h1 {
+	text-align: center;
+	color: #3D9BE9;
+	font-family: 'Chelsea Market', cursive;
+}
+
+.aboutus p {
+	font-size: 18px;
+	font-family: 'Chelsea Market', cursive;
+	width: 50%;
+	margin: auto;
+	text-align: center;
+}
+
+.aboutus .unologo{
+	border-radius: 50%;
+	float: right;
+	display: flex;
+}
+
+/***** CONTACT US *****/
+.contactus h1 {
+	text-align: center;
+	color: #3D9BE9;
+	font-family: 'Chelsea Market', cursive;
+}
+
+.contactus p {
+	font-size: 18px;
+	font-family: 'Chelsea Market', cursive;
+	width: 50%;
+	margin: auto;
+	text-align: center;
+}
+.contactus form, button {
+	align-content: center;
+	text-align: center;
+	align-items: center;
 }

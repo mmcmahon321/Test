@@ -28,10 +28,10 @@
 		   </div>
 		</div>
 		<ul>
-			<li><a class="active" href="home.html">Home</a></li>
+			<li><a class="active" href="{% url 'home' %}">Home</a></li>
 			<li><a class="active" href="shop.html">Shop</a></li>
-			<li><a class="active" href="aboutus.html">About Us</a></li>
-			<li><a class="active" href="contactus.html">Contact Us</a></li>
+			<li><a class="active" href="{% url 'about' %}">About Us</a></li>
+			<li><a class="active" href="{% url 'contact' %}">Contact Us</a></li>
 		</ul>
 	</nav>
 </header>

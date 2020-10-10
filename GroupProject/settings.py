@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'd+tp64rw+)kkh*h*(of&9q%_cw+)8#59_id1mzml2l5t!vb^12'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'TitanComputerParts.apps.TitancomputerpartsConfig',
     'users.apps.UsersConfig',
+    'contact.apps.ContactConfig',
     'crispy_forms'
 ]
 
@@ -132,4 +133,8 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_HOST_USER= 'TitanComputerPartsUNO@gmail.com'
+EMAIL_HOST_PASSWORD= 'fzkxlpwfmwureorr'
+EMAIL_USE_TLS= True
+EMAIL_PORT= 587
