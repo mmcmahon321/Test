@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Titan Computer Parts</title>
+<!-- main stylepage -->
+<link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+<!-- Google API for Chelsea Market font -->
+<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+<!-- CloudFlare search font -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header>
+	<h1>Titan Computer Parts</h1>
+	<nav>
+		<div class="wrap">
+		   <div class="search">
+			  <input type="text" class="searchTerm" placeholder="What are you looking for?">
+			  <button type="submit" class="searchButton">
+				<i class="fa fa-search"></i>
+			 </button>
+			 <div class="logincart">
+				<i class="fa fa-user" aria-hidden="true"></i>
+				<i class="fa" style="font-size:24px">&#xf07a;</i>
+				<span class="badge badge-warning" id="lblCartCount"> 0 </span>
+			 </div>
+		   </div>
+		</div>
+		<ul>
+			<li><a class="active" href="home.html">Home</a></li>
+			<li><a class="active" href="shop.html">Shop</a></li>
+			<li><a class="active" href="aboutus.html">About Us</a></li>
+			<li><a class="active" href="contactus.html">Contact Us</a></li>
+		</ul>
+	</nav>
+</header>
+<body>
+   {% block content %}
+   {% endblock %}
+</body>
+</html>
