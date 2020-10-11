@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'TitanComputerParts.apps.TitancomputerpartsConfig',
     'users.apps.UsersConfig',
     'contact.apps.ContactConfig',
-    'crispy_forms'
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -130,8 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/logoutsuccessful'
 
 EMAIL_HOST= 'smtp.gmail.com'
 EMAIL_HOST_USER= 'TitanComputerPartsUNO@gmail.com'

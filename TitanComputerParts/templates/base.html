@@ -21,8 +21,18 @@
 				<i class="fa fa-search"></i>
 			 </button>
 			 <div class="logincart">
-                 <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				<i class="fa fa-user" aria-hidden="true"></i>
+                 <div class="userdropdown">
+                    <button class="userdropbtn"><i class="fa fa-user" aria-hidden="true"></i></button>
+                     <div class="userdropdown-content">
+                         {% if user.is_authenticated %}
+                             <a href="#">Account</a>
+                             <a href="#">Orders</a>
+                             <a href="{% url 'logout' %}">Log Out</a>
+                         {% else %}
+                             <a href="{% url 'login' %}">Login</a>
+                         {% endif %}
+                     </div>
+                 </div>
 				<i class="fa" style="font-size:24px">&#xf07a;</i>
 				<span class="badge badge-warning" id="lblCartCount"> 0 </span>
 			 </div>
