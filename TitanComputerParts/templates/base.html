@@ -30,6 +30,7 @@
                              <a href="{% url 'logout' %}">Log Out</a>
                          {% else %}
                              <a href="{% url 'login' %}">Login</a>
+                             <a href="{% url 'register' %}">Register</a>
                          {% endif %}
                      </div>
                  </div>
@@ -40,7 +41,7 @@
 		</div>
 		<ul>
 			<li><a class="active" href="{% url 'home' %}">Home</a></li>
-			<li><a class="active" href="shop.html">Shop</a></li>
+			<li><a class="active" href="#">Shop</a></li>
 			<li><a class="active" href="{% url 'about' %}">About Us</a></li>
 			<li><a class="active" href="{% url 'contact' %}">Contact Us</a></li>
 		</ul>
