@@ -19,6 +19,7 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth import views as auth_views
 from users import views as u
 from contact import views as c
+from store import views as s
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
@@ -31,4 +32,9 @@ urlpatterns = [
     path("about/", TemplateView.as_view(template_name='about.html'), name='about'),
     path("contact/", c.contact, name="contact"),
     path("contact/success/", TemplateView.as_view(template_name='contact/success.html'), name='success'),
+    path("store/", s.store, name="store"),
+    path("cart/", s.store, name="cart"),
+    path("checkout/", s.store, name="checkout"),
+
+
 ]
