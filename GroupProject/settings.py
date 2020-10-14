@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'contact.apps.ContactConfig',
     'crispy_forms',
+    'salesman.apps.SalesmanConfig',
 
     'store.apps.StoreConfig',
 ]

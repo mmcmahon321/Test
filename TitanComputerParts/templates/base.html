@@ -44,7 +44,13 @@
 			<li><a class="active" href="{% url 'store' %}">Store</a></li>
 			<li><a class="active" href="{% url 'about' %}">About Us</a></li>
 			<li><a class="active" href="{% url 'contact' %}">Contact Us</a></li>
+
+            {% if user.is_superuser %}
+            <li><a class="active" href="{% url 'salesman:product_list' %}">Products</a></li>
+            {% endif %}
+
 		</ul>
+
 
         <ul>
 
