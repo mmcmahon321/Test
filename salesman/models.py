@@ -1,11 +1,7 @@
-from django.db import models
 from django.utils import timezone
+from django.db import models
 
-
-
-
-
-class Products(models.Model):
+class Product(models.Model):
     product_name = models.CharField(max_length=100)
     SKU = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -22,5 +18,6 @@ class Products(models.Model):
         self.save()
 
     def updated(self):
-        self.updated_date = timezone.now()
+        self.product_updated = timezone.now()
         self.save()
+

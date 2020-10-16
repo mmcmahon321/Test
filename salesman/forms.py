@@ -1,12 +1,7 @@
 from django import forms
-from .models import Products
+from .models import Product
 
 class ProductForm(forms.ModelForm):
     class Meta:
-<<<<<<< Updated upstream
-        model = Products
-        fields = ('product_name', 'SKU', 'price', 'weight', 'product_description', 'product_category', 'product_stock', 'product_location', 'product_added', 'product_updated')
-=======
         model = Product
-        fields = ('product_name', 'SKU', 'price', 'weight', 'product_description', 'product_category', 'product_stock', 'product_location', 'product_updated', 'created_date')
->>>>>>> Stashed changes
+        fields = ('product_name', 'SKU', 'price', 'weight', 'product_description', 'product_category', 'product_stock', 'product_location', 'created_date', 'product_updated')
