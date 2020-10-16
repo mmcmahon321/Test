@@ -1,5 +1,8 @@
-from django.utils import timezone
 from django.db import models
+from django.utils import timezone
+
+
+
 
 
 class Products(models.Model):
@@ -11,7 +14,7 @@ class Products(models.Model):
     product_category = models.CharField(max_length=100)
     product_stock = models.IntegerField(blank=False, null=False)
     product_location = models.CharField(max_length=50)
-    product_added = models.DateTimeField(default=timezone.now)
+    created_date = models.DateTimeField(default=timezone.now)
     product_updated = models.DateTimeField(default=timezone.now)
 
     def created(self):
