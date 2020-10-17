@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 {% block content %}
     <h1>Edit Product</h1>
     <form method="POST" class="product-form">{% csrf_token %}
@@ -7,5 +7,5 @@
         <button type="submit" class="save btn btn-default">Update</button>
     </form>
 {% endblock %}
-</html>
+
 
