@@ -49,6 +49,7 @@
 
             {% if user.is_superuser %}
             <li><a class="active" href="{% url 'salesman:product_list' %}">Products</a></li>
+            <li><a class="active" href="{% url 'salesman:customer_list' %}">Customer View</a></li>
             {% endif %}
 
 		</ul>

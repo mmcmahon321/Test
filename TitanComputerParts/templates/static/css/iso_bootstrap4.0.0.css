@@ -2869,15 +2869,50 @@
   background-image: none;
   border-color: #419641;
 }
+.bootstrap .btn-new {
+  color: #fff;
+  background-color: darkgreen;
+  border-color: darkgreen;
+}
+
+.bootstrap .btn-new:hover {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #eb9316;
+}
+
+.bootstrap .btn-new.focus,
+.bootstrap .btn-new:focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(240, 173, 78, 0.5);
+  box-shadow: 0 0 0 2px rgba(240, 173, 78, 0.5);
+}
+
+.bootstrap .btn-new.disabled,
+.bootstrap .btn-new:disabled {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+
+.bootstrap .btn-new.active,
+.bootstrap .btn-new:active,
+.bootstrap .show > .btn-new.dropdown-toggle {
+  color: #fff;
+  background-color: #ec971f;
+  background-image: none;
+  border-color: #eb9316;
+}
+
 .bootstrap .btn-warning {
   color: #fff;
   background-color: #f0ad4e;
   border-color: #f0ad4e;
 }
+
 .bootstrap .btn-warning:hover {
   color: #fff;
   background-color: #ec971f;
   border-color: #eb9316;
+
 }
 .bootstrap .btn-warning.focus,
 .bootstrap .btn-warning:focus {
