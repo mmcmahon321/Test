@@ -30,6 +30,7 @@
                              <a href="#">Account</a>
                              <a href="#">Orders</a>
                              <a href="{% url 'logout' %}">Log Out</a>
+                             <a href="{% url 'change_password' %}">Change Password</a>
                          {% else %}
                              <a href="{% url 'login' %}">Login</a>
                              <a href="{% url 'register' %}">Register</a>
