@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path,  include
 from django.views.generic.base import TemplateView
 from django.contrib.auth import views as auth_views
 from users import views as u
@@ -45,6 +45,6 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'),
     path('', include('salesman.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('change_password/', auth_views.PasswordChangeView.as_view(template_name='users/change_password.html'), name='change_password'),
-    path('password_change/done', auth_views.PasswordChangeDoneView.as_view(template_name='users/password_updated.html'), name='password_updated'),
+    path('change_password/', u.change_password, name='change_password'),
+    path('password_updated/', u.password_updated, name='password_updated'),
 ]
