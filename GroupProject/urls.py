@@ -23,8 +23,6 @@ from contact import views as c
 from store import views as s
 
 
-
-
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('home/', TemplateView.as_view(template_name='home.html'), name='home'),
@@ -37,8 +35,8 @@ urlpatterns = [
     path("contact/", c.contact, name="contact"),
     path("contact/success/", TemplateView.as_view(template_name='contact/success.html'), name='success'),
     path("store/", s.store, name="store"),
-    path("cart/", s.store, name="cart"),
-    path("checkout/", s.store, name="checkout"),
+    path("cart/", s.cart, name="cart"),
+    path("checkout/", s.checkout, name="checkout"),
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name='users/password_reset_form.html'), name='password_reset'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),

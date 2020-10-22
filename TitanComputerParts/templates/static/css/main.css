@@ -21,6 +21,12 @@ h1 {
 	font-size: 20px;
 }
 
+.logincart a {
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
 /****** NAV BAR ******/
 nav ul {
 	margin: 0px;

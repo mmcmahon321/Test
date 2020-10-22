@@ -1,6 +1,7 @@
 from django.utils import timezone
 from django.db import models
 
+
 class Products(models.Model):
     product_name = models.CharField(max_length=100)
     SKU = models.CharField(max_length=100)
@@ -23,6 +24,9 @@ class Products(models.Model):
 
     def __str__(self):
         return str(self.prod_name)
+
+    class Meta:
+        verbose_name_plural = "products"
 
 
 # Create your models here.

@@ -37,8 +37,10 @@
                          {% endif %}
                      </div>
                  </div>
-				<i class="fa" style="font-size:24px">&#xf07a;</i>
-				<span class="badge badge-warning" id="lblCartCount"> 0 </span>
+                 <a href="{% url 'cart' %}">
+                     <i class="fa" style="font-size:24px">&#xf07a;</i>
+				    <span class="badge badge-warning" id="lblCartCount"> 0 </span>
+                 </a>
 			 </div>
 		   </div>
 		</div>
@@ -50,7 +52,7 @@
 
             {% if user.is_superuser %}
             <li><a class="active" href="{% url 'salesman:product_list' %}">Products</a></li>
-            <li><a class="active" href="{% url 'salesman:customer_list' %}">Customer View</a></li>
+            <li><a class="active" href="{% url 'salesman:customer_list' %}">Customers</a></li>
             {% endif %}
 
 		</ul>

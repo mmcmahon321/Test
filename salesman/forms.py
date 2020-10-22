@@ -1,10 +1,12 @@
 from django import forms
 from .models import Products, Customer
 
+
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Products
         fields = ('product_name', 'SKU', 'price', 'weight', 'product_description', 'product_category', 'product_stock', 'product_location', 'created_date', 'product_updated')
+
 
 class CustomerForm(forms.ModelForm):
     class Meta:
