@@ -32,8 +32,9 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     'TitanComputerParts/templates/static',
-    '/var/www/static/',
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Application definition
 
@@ -136,7 +137,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/logoutsuccessful'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST= 'smtp.gmail.com'
 EMAIL_HOST_USER= 'TitanComputerPartsUNO@gmail.com'
 EMAIL_HOST_PASSWORD= 'fzkxlpwfmwureorr'

@@ -42,17 +42,17 @@
                     <td>{{ product.created_date }}</td>
                     <td>{{ product.product_updated }}</td>
 
-                <td><a href="{% url 'salesman:product_edit' pk=product.pk %}"
+                <td><a href="{% url 'product_edit' pk=product.pk %}"
                 class="btn btn-warning">Edit</a>
                 </td>
 
-                <td><a href="{% url 'salesman:product_delete' pk=product.pk %}"
+                <td><a href="{% url 'product_delete' pk=product.pk %}"
                 onclick="return confirm('Are you sure you want to delete?')"
                 class="btn btn-danger">Delete</a>
                 </td>
                 </tr>
             {% endfor %}
-                <td><a href="{% url 'salesman:product_new' %}"
+                <td><a href="{% url 'product_new' %}"
                 class="row"><span class="btn btn-new">Add Product</span></a></td>
             </tbody>
         </table>

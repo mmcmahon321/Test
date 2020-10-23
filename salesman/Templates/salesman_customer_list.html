@@ -42,17 +42,17 @@
                     <td>{{ customer.city }}</td>
                     <td>{{ customer.state }}</td>
                     <td>{{ customer.zipcode }}</td>
-                <td><a href="{% url 'salesman:customer_edit' pk=customer.pk %}"
+                <td><a href="{% url 'customer_edit' pk=customer.pk %}"
                 class="btn btn-warning">Edit</a></td>
 
-                <td><a href="{% url 'salesman:customer_delete' pk=customer.pk %}"
+                <td><a href="{% url 'customer_delete' pk=customer.pk %}"
                 onclick="return confirm('Are you sure you want to delete?')"
                 class="btn btn-danger">Delete</a>
                 </td>
 
                 </tr>
             {% endfor %}
-                <td><a href="{% url 'salesman:customer_new' %}"
+                <td><a href="{% url 'customer_new' %}"
                 class="row"><span class="btn btn-new">Add Customer</span></a>
             </td>
             </tbody>
@@ -64,6 +64,5 @@
 
     </div>
     </body>
-    </html>
 {% endblock %}
-</html>
+

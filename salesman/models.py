@@ -23,7 +23,7 @@ class Products(models.Model):
         self.save()
 
     def __str__(self):
-        return str(self.prod_name)
+        return str(self.product_name)
 
     class Meta:
         verbose_name_plural = "products"
