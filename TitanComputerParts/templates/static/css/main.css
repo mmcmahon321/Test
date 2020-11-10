@@ -225,4 +225,32 @@ body {
 
 .userdropdown:hover .dropbtn {background-color: #3e8e41;}
 
-/***** Store *****/
+/***** HOME *****/
+.homebuttons h1 {
+	padding-top: 20px;
+	text-align: center;
+	font-size: 35px;
+	color: #3D9BE9;
+	font-weight: BOLD;
+}
+
+.homebuttons a:link, a:visited {
+	background-color: #3D9BE9;
+	color: white;
+	padding: 14px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+}
+.homebuttons a:hover, a:active {
+  background-color: #3D9BE9;
+}
+
+.hotitems h1 {
+	padding-top: 20px;
+	text-align: center;
+	font-size: 35px;
+	color: #3D9BE9;
+	font-weight: BOLD;
+}
