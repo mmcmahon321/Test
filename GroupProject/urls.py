@@ -29,7 +29,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('home/', TemplateView.as_view(template_name='home.html'), name='home'),
     path('admin/', admin.site.urls),
-    path("register/", u.register, name="register"),
+    path('register/', u.signup, name='signup'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='logout/completed'), name='logout'),
     path('logoutsuccessful/', TemplateView.as_view(template_name='users/logoutsuccessful.html'), name='logoutsuccessful'),

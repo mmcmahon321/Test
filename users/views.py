@@ -1,26 +1,25 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from .forms import RegisterForm
+from users.forms import SignUpForm
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 
 # Create your views here.
-def register(response):
-    if response.method == "POST":
-        form = RegisterForm(response.POST)
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            login(response, user)
-        return redirect("/home")
+            login(request, user)
+            return redirect('home')
     else:
-        form = RegisterForm()
-
-    return render(response, "users/register.html", {"form": form})
+        form = SignUpForm()
+    return render(request, 'users/signup.html', {'form': form})
 
 
 def change_password(request):
