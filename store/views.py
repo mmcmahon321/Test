@@ -15,3 +15,8 @@ def checkout(request):
 	context = {}
 	return render(request, 'store/checkout.html', context)
 
+def payment(request):
+	context = {}
+	return render(request, 'store/payment.html', context)
+
+
