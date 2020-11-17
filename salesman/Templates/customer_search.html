@@ -2,7 +2,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
     <body>
     <style>
         body {
@@ -11,6 +10,10 @@
     </style>
     <h1 style="text-align: center; background-color: #3D9BE9;">Customers</h1>
     <div class="bootstrap">
+        <form method="get">
+            {{ filter.form.as_p }}
+            <button type="submit">Search</button>
+        </form>
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr class="bg-info">
@@ -24,30 +27,31 @@
                 <th>City</th>
                 <th>State</th>
                 <th>Zip Code</th>
-
                 <th colspan="3">Actions</th>
             </tr>
             </thead>
             <tbody>
-            {% for customer in customers %}
+            {% for customers in filter.qs %}
                 <tr>
-                    <td>{{ customer.cust_name }}</td>
-                    <td>{{ customer.organization }}</td>
-                    <td>{{ customer.role }}</td>
-                    <td>{{ customer.email }}</td>
-                    <td>{{ customer.phone_number }}</td>
-                    <td>{{ customer.account_number }}</td>
-                    <td>{{ customer.address }}</td>
-                    <td>{{ customer.city }}</td>
-                    <td>{{ customer.state }}</td>
-                    <td>{{ customer.zipcode }}</td>
-                <td><a href="{% url 'customer_edit' pk=customer.pk %}"
+                    <td>{{ customers.cust_name }}</td>
+                    <td>{{ customers.organization }}</td>
+                    <td>{{ customers.role }}</td>
+                    <td>{{ customers.email }}</td>
+                    <td>{{ customers.phone_number }}</td>
+                    <td>{{ customers.account_number }}</td>
+                    <td>{{ customers.address }}</td>
+                    <td>{{ customers.city }}</td>
+                    <td>{{ customers.state }}</td>
+                    <td>{{ customers.zipcode }}</td>
+
+                <td><a href="{% url 'customer_edit' pk=customers.pk %}"
                 class="btn btn-warning">Edit</a></td>
 
-                <td><a href="{% url 'customer_delete' pk=customer.pk %}"
+                <td><a href="{% url 'customer_delete' pk=customers.pk %}"
                 onclick="return confirm('Are you sure you want to delete?')"
                 class="btn btn-danger">Delete</a>
                 </td>
+
 
                 </tr>
             {% endfor %}
@@ -60,9 +64,10 @@
             </tbody>
         </table>
 
+        </div>
+     </div>
+
+
     </div>
-
-
     </body>
 {% endblock %}
-

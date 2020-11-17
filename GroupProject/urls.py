@@ -55,4 +55,5 @@ urlpatterns = [
     path('customer/<int:pk>/edit/', sm.customer_edit, name='customer_edit'),
     path('customer/<int:pk>/delete/', sm.customer_delete, name='customer_delete'),
     path('product/product_search/', sm.product_search, name='product_search'),
+    path('customer/customer_search/', sm.customer_search, name="customer_search")
 ]

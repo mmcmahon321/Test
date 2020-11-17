@@ -107,5 +107,11 @@ def product_search(request):
     product_filter = Product_filters(request.GET, queryset=product_list)
     return render(request, 'product_search.html', {'filter': product_filter})
 
+# Customer Search
+def customer_search(request):
+    customer_list = Customer.objects.all()
+    customer_filter = Customer_filters(request.GET, queryset=customer_list)
+    return render(request, 'customer_search.html', {'filter': customer_filter})
+
 
 
