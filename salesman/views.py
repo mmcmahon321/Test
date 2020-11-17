@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import *
 from django.shortcuts import redirect
+from .filters import *
 
 now = timezone.now()
 
@@ -35,7 +36,7 @@ def product_edit(request, pk):
 def product_delete(request, pk):
     product = get_object_or_404(Products, pk=pk)
     product.delete()
-    return redirect('salesman:product_list')
+    return redirect('product_list')
 
 
 @login_required
@@ -98,4 +99,13 @@ def customer_edit(request, pk):
 def customer_delete(request, pk):
     customer = get_object_or_404(Customer, pk=pk)
     customer.delete()
-    return redirect('salesman:customer_list')
+    return redirect('customer_list')
+
+# Product Search
+def product_search(request):
+    product_list = Products.objects.all()
+    product_filter = Product_filters(request.GET, queryset=product_list)
+    return render(request, 'product_search.html', {'filter': product_filter})
+
+
+
