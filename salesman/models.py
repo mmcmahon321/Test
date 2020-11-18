@@ -2,17 +2,32 @@ from django.utils import timezone
 from django.db import models
 
 
+# categories
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=50, unique=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
+    def __str__(self):
+        return self.name
+
+
 class Products(models.Model):
     product_name = models.CharField(max_length=100)
     SKU = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     weight = models.DecimalField(max_digits=10, decimal_places=2)
     product_description = models.TextField()
-    product_category = models.CharField(max_length=100)
+    product_category = models.ForeignKey(Category, on_delete=models.CASCADE)
     product_stock = models.IntegerField(blank=False, null=False)
     product_location = models.CharField(max_length=50)
     created_date = models.DateTimeField(default=timezone.now)
     product_updated = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(null=True, blank=True)
 
     def created(self):
         self.created_date = timezone.now()
@@ -24,6 +39,14 @@ class Products(models.Model):
 
     def __str__(self):
         return str(self.product_name)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
     class Meta:
         verbose_name_plural = "products"

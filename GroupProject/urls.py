@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path,  include
+from django.conf.urls.static import static
+from django.conf import settings
 from django.views.generic.base import TemplateView
 from django.contrib.auth import views as auth_views
 from users import views as u
@@ -55,5 +57,8 @@ urlpatterns = [
     path('customer/<int:pk>/edit/', sm.customer_edit, name='customer_edit'),
     path('customer/<int:pk>/delete/', sm.customer_delete, name='customer_delete'),
     path('product/product_search/', sm.product_search, name='product_search'),
-    path('customer/customer_search/', sm.customer_search, name="customer_search")
+    path('customer/customer_search/', sm.customer_search, name="customer_search"),
+    path('store/<int:pk>/product', sm.product_view, name='product_view'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -3,5 +3,22 @@
 {% block title %}Product View{% endblock title %}
 
 {% block content %}
-
+<div class="bootstrap">
+    <div class="container">
+        <div class="productdisplay">
+            <img class="productimg" src="{{ products.imageURL }}" alt="NO IMAGE" width="300" height="300"/>
+            <h1>{{ products.product_name }}</h1>
+            <p1>${{ products.price }}</p1>
+            <br>
+            <h2>About this product:</h2>
+            <p2>{{ products.product_description }}</p2>
+            <br>
+            <br>
+            <p3>Available in stock: {{ products.product_stock }}</p3>
+            <br>
+            <br>
+            <button type="button">Add to Cart</button>
+        </div>
+    </div>
+</div>
 {% endblock content %}

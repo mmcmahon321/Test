@@ -107,6 +107,7 @@ def product_search(request):
     product_filter = Product_filters(request.GET, queryset=product_list)
     return render(request, 'product_search.html', {'filter': product_filter})
 
+
 # Customer Search
 def customer_search(request):
     customer_list = Customer.objects.all()
@@ -114,4 +115,11 @@ def customer_search(request):
     return render(request, 'customer_search.html', {'filter': customer_filter})
 
 
+# View products
+def product_view(request, pk):
+    if pk:
+        product = Products.objects.get(pk=pk)
+    else:
+        product = request.Product
+    return render(request, 'store/product_view.html', {'products': product})
 

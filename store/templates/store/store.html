@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %}Store{% endblock title %}
 
 {% block content %}
-    <h1>Store</h1>
+    <div class="displayall">
+<div class="bootstrap">
+    <div class="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-lg-4">
+            <img class="thumbnail" src="{{ product.imageURL }}"/>
+            <div class="box-element displayall">
+                <h6><strong>{{ product.product_name }}</strong></h6>
+                <hr>
+                <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                <a class="btn-outline-success" href="{% url 'product_view' pk=product.pk %}">View</a>
+                <h4 style="display: inline-block; float: right">${{ product.price|floatformat:2 }}</h4>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+    </div>
 {% endblock %}

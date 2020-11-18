@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from salesman.models import *
 
 
 def store(request):
-	context = {}
+	products = Products.objects.all()
+	context = {'products': products}
 	return render(request, 'store/store.html', context)
 
 
@@ -14,6 +16,7 @@ def cart(request):
 def checkout(request):
 	context = {}
 	return render(request, 'store/checkout.html', context)
+
 
 def payment(request):
 	context = {}
