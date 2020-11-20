@@ -27,7 +27,7 @@ class Products(models.Model):
     product_location = models.CharField(max_length=50)
     created_date = models.DateTimeField(default=timezone.now)
     product_updated = models.DateTimeField(default=timezone.now)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to='Products')
 
     def created(self):
         self.created_date = timezone.now()

@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Edit Product</h1>
-    <form method="POST" class="product-form">{% csrf_token %}
+    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Update</button>
     </form>

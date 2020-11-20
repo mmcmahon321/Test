@@ -19,7 +19,7 @@ def product_list(request):
 def product_edit(request, pk):
     product = get_object_or_404(Products, pk=pk)
     if request.method == "POST":
-        form = ProductForm(request.POST, instance=product)
+        form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             product = form.save()
             product.updated_date = timezone.now()
@@ -42,7 +42,7 @@ def product_delete(request, pk):
 @login_required
 def product_new(request):
     if request.method == "POST":
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save(commit=False)
             product.created_date = timezone.now()
@@ -53,6 +53,7 @@ def product_new(request):
     else:
         form = ProductForm()
     return render(request, 'salesman_product_new.html', {'form': form})
+
 
 @login_required
 def customer_new(request):
