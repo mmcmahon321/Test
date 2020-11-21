@@ -38,7 +38,7 @@ urlpatterns = [
     path("about/", TemplateView.as_view(template_name='about.html'), name='about'),
     path("contact/", c.contact, name="contact"),
     path("contact/success/", TemplateView.as_view(template_name='contact/success.html'), name='success'),
-    path("payment", s.payment, name="payment"),
+    path("payment/", s.payment, name="payment"),
     path("store/", s.store, name="store"),
     path("cart/", s.cart, name="cart"),
     path("checkout/", s.checkout, name="checkout"),
