@@ -100,6 +100,7 @@ def customer_edit(request, pk):
 def customer_delete(request, pk):
     customer = get_object_or_404(Customer, pk=pk)
     customer.delete()
+<<<<<<< Updated upstream
     return redirect('customer_list')
 
 # Product Search
@@ -124,3 +125,6 @@ def product_view(request, pk):
         product = request.Product
     return render(request, 'store/product_view.html', {'products': product})
 
+=======
+    return redirect('customer_list')
+>>>>>>> Stashed changes
